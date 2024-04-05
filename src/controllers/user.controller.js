@@ -53,7 +53,7 @@ const registerUser = asyncHandler(async (req,res) => {
             "-password -refreshToken"
         )
 
-        if (!registerUser) {
+        if (!registeredUser) {
             throw new apiError(500,"Something went wrong during registration of user")
         }
 
