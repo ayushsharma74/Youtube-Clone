@@ -276,5 +276,6 @@ export {
     registerUser,
     loginUser,
     logoutUser,
-    refreshAccessToken
+    refreshAccessToken,
+    getUserChannelProfile
 }
