@@ -52,7 +52,6 @@ userSchema.pre("save",async function(next){
         this.password = await bcrypt.hash(this.password,8)
         next()
     }
-
     next()
 })
 
@@ -62,18 +61,16 @@ userSchema.methods.passwordCheck = async function(password){
 
 userSchema.methods.generateAccessToken = async function(){
     return await jwt.sign({
-        _id: this._id,
-        username: this.username,
-        fullname: this.fullname
+        _id: this._id
     },process.env.ACCESS_TOKEN_SECRET,{
-        expiresIn: process.env.ACCESS_TOKEN_EXPIRY
+        expiresIn: "3d"
     })
 }
 userSchema.methods.generateRefreshToken = function(){
     return jwt.sign({
         _id: this._id,
     },process.env.REFRESH_TOKEN_SECRET,{
-        expiresIn: process.env.REFRESH_TOKEN_EXPIRY
+        expiresIn: "10d"
     })
 }
 
