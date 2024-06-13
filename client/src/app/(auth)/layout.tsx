@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
+// import queryClient from "@/lib/react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
+// import {ReactQueryDevtools} from "react-query-devtools"
 // import Navbar from "../components/Navigation/Navbar"
 // import Sidebar from "../components/Navigation/Sidebar"
 
@@ -20,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="cupcake">
       <body className={`${inter.className}`}>
+      <ReactQueryProvider>
         <div className="pt-[4rem]">
         {children}
         </div>
+        </ReactQueryProvider>
       </body>
     </html>
   );

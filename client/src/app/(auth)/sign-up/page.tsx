@@ -1,8 +1,11 @@
+import Link from 'next/link'
 import React from 'react'
+import { useQuery } from '@tanstack/react-query'
 
 type Props = {}
 
 const SignUp = (props: Props) => {
+
   return (
     <div className="container px-4 mx-auto">
     <div className="max-w-lg mx-auto">
@@ -20,15 +23,15 @@ const SignUp = (props: Props) => {
       <form action="">
         <div className="mb-6">
           <label className="block mb-2 font-extrabold">Username</label>
-          <input className="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded" type="email" placeholder="email" />
+          <input className="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded" type="email" placeholder="johndoe" />
         </div>
         <div className="mb-6">
           <label className="block mb-2 font-extrabold">Full Name</label>
-          <input className="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded" type="email" placeholder="email" />
+          <input className="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded" type="email" placeholder="John Doe" />
         </div>
         <div className="mb-6">
           <label className="block mb-2 font-extrabold">Email</label>
-          <input className="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded" type="email" placeholder="email" />
+          <input className="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded" type="email" placeholder="john@gmail.com" />
         </div>
         <div className="mb-6">
           <label className="block mb-2 font-extrabold">Password</label>
@@ -45,8 +48,8 @@ const SignUp = (props: Props) => {
             password?</a></div>
         </div>
         <button className="inline-block w-full py-4 px-6 mb-6 text-center text-lg leading-6 text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200">Sign in</button>
-        <p className="text-center font-extrabold">Already have an account? <a className="text-red-500 hover:underline"
-          href="#">Sign up</a></p>
+        <p className="text-center font-extrabold">Already have an account? <Link className="text-red-500 hover:underline"
+          href={"sign-in"}>Sign in</Link></p>
       </form>
     </div>
   </div>

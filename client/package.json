@@ -9,12 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.45.0",
+    "axios": "^1.7.2",
     "lucide-react": "^0.383.0",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hook-form": "^7.51.5",
+    "react-query": "^3.39.3"
   },
   "devDependencies": {
+    "@tanstack/react-query-devtools": "^5.45.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
